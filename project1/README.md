@@ -4,7 +4,7 @@
 
 ## About
 
-Book review website
+Book Review Website
 
 ## Files
 
