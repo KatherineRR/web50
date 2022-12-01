@@ -1,0 +1,25 @@
+{% extends "tienda/layout.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+    <!-- Title Page -->
+	<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url({% static 'tienda/images/login.jpg' %});">
+		<h2 class="l-text2 t-center">
+			Inicia sesión y aprovecha nuestras ofertas!
+		</h2>
+	</section>
+    <br>
+    <br>	
+    <section class="bgwhite p-t-66 p-b-60 text-center">
+		<div class="container">
+			<div class="row">		
+                <div class="col-md-6 p-b-30 mx-auto">
+                    <h1> Haz cerrado tu sesión exitosamente! </h1>                          
+                </div>
+            </div>           
+        </div>
+    </section>
+    <br>
+    <br>
+{% endblock content %}

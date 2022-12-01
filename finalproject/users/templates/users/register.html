@@ -1,0 +1,48 @@
+{% extends "tienda/layout.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <section class="bgwhite p-t-66 p-b-60">
+		<div class="container">
+			<div class="row">			
+                <div class="col-md-6 p-b-30 mx-auto">
+                    <form method="POST" class="leave-comment">
+                        {% csrf_token %}
+                        <h4 class="m-text26 p-b-36 p-t-15">
+                            Crea tu cuenta
+                        </h4>
+                        {% for field in form %}
+                            {% if field.name == 'password1' or field.name == 'password2' %}
+                                <div class="bo4 of-hidden size15 m-b-20">
+                                    <input class="sizefull s-text7 p-l-22 p-r-22" type="password" name="{{ field.name }}" placeholder="{{ field.label }}" required>
+                                </div>
+                            {% else %}
+                                <div class="bo4 of-hidden size15 m-b-20">
+                                    <input class="sizefull s-text7 p-l-22 p-r-22" type="text autofocus required" id="id_"{{ field.name }}"" name="{{ field.name }}" placeholder="{{ field.label }}" required>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                         <p id="hint_id_password1" class="help-block">
+                            <ul>
+                                <li>Tu contraseña no puede ser muy similar a tu otra información personal.</li>
+                                <li>Tu contraseña debe contener al menos 8 carácteres.</li>
+                                <li>Tu contraseña no puede ser totalmente numérica.</li>
+                            </ul>
+                         </p>
+                         <br>
+                        <div class="w-size25 mx-auto">
+                            <button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4" type="submit">Iniciar</button>
+                        </div>
+                    </form>
+                    <div class="border-top pt-3">
+                        <small class="text-muted">
+                            Ya tienes una cuenta? <a class="ml-2" href="{% url 'login' %}">Inicia sesión</a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock content %}

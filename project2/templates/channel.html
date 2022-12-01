@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<script src="/static/index.js"></script>
+{% endblock %}
+
+{% block title %}
+    Chat 
+{% endblock %}
+
+{% block main %}
+<div>
+    <h1 id="chatName">{{ session.current_channel }}</h1>
+
+</div>
+<div class="container-channel custom-window">
+  <div id="chat-box" class="list-group">
+      <textarea id="chat" cols="50" rows="15" readonly>
+          {%- if messages -%} 
+              {%- for message in messages -%}
+                  - [{{ message[1] }}]: {{ message [2] }} {{'\n'}}
+                  {{ message[0] }}{{'\n'}}
+              {%- endfor -%}
+              {{ '----- These are old messages -----' }}{{- '\n' -}}
+          {%- endif -%}
+      </textarea>
+  </div>
+    <div id="message-box">
+        <div class="input-group mb-3">
+            <input id="comment" type="text" class="form-control"  aria-label="Write a message" aria-describedby="send-button">
+            <div class="input-group-append">
+                <button id="send-button" class="btn btn-outline-secondary" type="reset" >Send</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+    {% endblock %}
