@@ -4,7 +4,7 @@
 
 ## Flack
 
-Flask web application
+Flask Web Application
 
 ## About
 
