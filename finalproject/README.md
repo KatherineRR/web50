@@ -4,7 +4,7 @@
 
 ## eCommerce
 
-eCommerce web application
+eCommerce Web Application
 
 ## About
 
